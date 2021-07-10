@@ -90,7 +90,12 @@ const Table = (props) => {
       </div>
     );
   }
-
+  function handleClickForCalander() {
+      setShowCalendar(true)
+  }
+  function handleCloseCalander() {
+      setShowCalendar(false)
+  }
   function actionFormatter(cell, row) {
     return (
       <div className="formatter">
@@ -103,8 +108,8 @@ const Table = (props) => {
           <span>Report</span>
         </div>
         <div className="calendarDiv">
-          <img src={Calendar} className="actionPic" alt="actionPic"></img>
-          <Calander rowData={row} onDateChange={props.onDateChange} />
+          <img src={Calendar} className="actionPic" alt="actionPic" onClick={handleClickForCalander}></img>
+          {showCalendar? <Calander rowData={row} onDateChange={props.onDateChange} closeCalander={handleCloseCalander}/>:null}
           <span>Schedule Again</span>
         </div>
       </div>

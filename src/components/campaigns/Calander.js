@@ -10,7 +10,9 @@ export default function Calander(props) {
         console.log("getting logged ",calDate);
         setCalDate(calDate)
         props.rowData['date'] = calDate
-        props.onDateChange(props.rowData)
+        props.closeCalander();
+        props.onDateChange(props.rowData);
+        
     }
     return (
         <div className="result-calendar">
